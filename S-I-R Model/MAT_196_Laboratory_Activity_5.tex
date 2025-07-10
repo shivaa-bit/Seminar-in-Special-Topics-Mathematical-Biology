@@ -1,0 +1,136 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+
+\section*{Model Formulation}
+
+The system of equations is given by:
+\[
+\left\{
+\begin{aligned}
+S_{t+1} &= (1-p)S_t - \frac{\beta}{N}I_t S_t + b(R_t + I_t), \\
+I_{t+1} &= \frac{\beta}{N}I_t S_t + (1-b-\gamma)I_t, \\
+R_{t+1} &= (1-b)R_t + \gamma I_t + pS_t,
+\end{aligned}
+\right.
+\]
+where \( 0 < p+b < 1 \) and \( 0 < b + \gamma < 1 \). The parameters are defined as:
+\begin{itemize}
+    \item \( b \): probability of birth,
+    \item \( \gamma \): probability of recovery,
+    \item \( p \): proportion vaccinated,
+    \item \( \beta \): contact rate,
+    \item \( N \): total population size.
+\end{itemize}
+Since \( N \) is constant, then:
+\[
+N = S_t + I_t + R_t.
+\]
+
+\section*{Equilibrium Analysis}
+
+Simplifying under the assumption \( N = S_t + I_t + R_t \), we eliminate \( R_t \). Thus:
+\[
+\left\{
+\begin{aligned}
+s_{t+1} &= (1-p)s_t - \frac{\beta}{N}I_t s_t + b(N - I_t - s_t + I_t), \\
+I_{t+1} &= \frac{\beta}{N}I_t s_t + (1-b-\gamma)I_t.
+\end{aligned}
+\right.
+\]
+
+Simplifying further:
+\[
+\left\{
+\begin{aligned}
+s_{t+1} &= (1-p)s_t - \frac{\beta}{N}I_t s_t + b(N - s_t), \\
+I_{t+1} &= \frac{\beta}{N}s_t I_t + (1-b-\gamma)I_t.
+\end{aligned}
+\right.
+\]
+
+### Equilibrium Conditions
+The equilibrium conditions \( f(\bar{s}, \bar{I}) = 0 \) and \( g(\bar{s}, \bar{I}) = 0 \) yield:
+\[
+\begin{aligned}
+(1-p)\bar{s} - \frac{\beta}{N}\bar{I}\bar{s} + b(N - \bar{s}) &= 0, \\
+\frac{\beta}{N}\bar{I}\bar{s} + (1-b-\gamma)\bar{I} &= 0.
+\end{aligned}
+\]
+
+From the second equation:
+\[
+\bar{I} \left( \frac{\beta}{N} \bar{s} + 1 - b - \gamma \right) = 0.
+\]
+Thus, either \( \bar{I} = 0 \) (disease-free equilibrium) or:
+\[
+\frac{\beta}{N} \bar{s} = b + \gamma.
+\]
+
+For \( \bar{I} = 0 \), substituting into the first equation:
+\[
+(1-p)\bar{s} + b(N - \bar{s}) = 0.
+\]
+Simplifying gives:
+\[
+\bar{s} = \frac{bN}{p + b}.
+\]
+
+For the endemic equilibrium (\( \bar{I} \neq 0 \)):
+\[
+\bar{s} = \frac{(b + \gamma)N}{\beta}.
+\]
+
+### Basic Reproduction Number
+The basic reproduction number \( R_0 \) is defined as:
+\[
+R_0 = \frac{\beta b}{(p + b)(b + \gamma)}.
+\]
+If \( R_0 < 1 \), the disease will die out; otherwise, an epidemic occurs.
+
+\section*{Jacobian Matrix}
+
+The Jacobian matrix of the system is:
+\[
+J =
+\begin{pmatrix}
+1-p - \frac{\beta}{N}I - b & -\frac{\beta}{N}s \\
+\frac{\beta}{N}I & \frac{\beta}{N}s + 1 - b - \gamma
+\end{pmatrix}.
+\]
+
+For the disease-free equilibrium (\( \bar{I} = 0 \), \( \bar{s} = \frac{bN}{p+b} \)), the Jacobian becomes:
+\[
+J_1 =
+\begin{pmatrix}
+1-p-b & -\frac{\beta b}{p+b} \\
+0 & \frac{\beta b}{p+b} + 1 - b - \gamma
+\end{pmatrix}.
+\]
+
+The eigenvalues of \( J_1 \) are:
+\[
+\lambda_1 = 1-p-b, \quad \lambda_2 = \frac{\beta b}{p+b} + 1 - b - \gamma.
+\]
+
+The disease-free equilibrium is locally asymptotically stable (LAS) if:
+\[
+|\lambda_1| < 1 \quad \text{and} \quad |\lambda_2| < 1.
+\]
+
+For the endemic equilibrium (\( \bar{s} = \frac{(b+\gamma)N}{\beta} \)), substituting into \( J \), we analyze its stability similarly.
+
+\section*{Conclusion}
+The basic reproduction number \( R_0 \) determines the threshold for the outbreak of an epidemic. If \( R_0 < 1 \), the disease-free equilibrium is stable, and no epidemic occurs.
+
+\end{document}

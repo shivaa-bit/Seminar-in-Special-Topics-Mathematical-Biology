@@ -1,0 +1,276 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\graphicspath{ {./images/} }
+
+\begin{document}
+$$
+\left\{\begin{array}{l}
+S_{t+1}=(1-p) S_{t}-\frac{\beta}{N} I_{t} S_{t}+b\left(R_{t}+I_{t}\right) \\
+I_{t+1}=\frac{\beta}{N} I_{t} S_{t}+(1-b-\gamma) I_{t}, \\
+R_{t+1}=(1-b) R_{t}+\gamma I_{t}+p S_{t}
+\end{array}\right.
+$$
+
+\includegraphics[max width=\textwidth, center]{2024_12_15_9d4b336fb87549cf30f8g-1}\\
+where $0<p+B<1$ and $0<b+r<1$ and the following parameters are as follows:\\
+b: probability of birth\\
+$\gamma$ : probability of recovery\\
+p: proportion vaccinated\\
+B: contact rate\\
+W: total population size\\
+Since $N$ is constant, then $N=S_{t}+I_{t}+R_{t}$.
+
+$$
+\begin{aligned}
+\text { Thus, } \\
+\begin{aligned}
+S_{t+1}+I_{t+1}+R_{t+1}= & (1-p) S_{t}-\frac{\beta}{N} I_{t} S_{t}+b\left(R_{t}+I_{t}\right)+\frac{\beta}{N} I_{t} S_{t}+(1-b-\partial) I_{\lambda} \\
+& +(1-b) R_{t}+\gamma I_{t}+P S_{t} \\
+= & S_{t}+I_{t}+R_{t}
+\end{aligned} \$ \begin{aligned}
+\end{aligned} \$ \begin{aligned}
+\end{aligned}
+\end{aligned}
+$$
+
+This means that $N=S_{t+1}+I_{t+1}+R_{t+1}$. Because $S_{t}+I_{t}+R_{t}=N$, then one of the functions can be eliminated, say $R_{t}$. That is,
+
+$$
+\begin{aligned}
+& \left\{\begin{array}{l}
+s_{t+1}=(1-p) s_{t}-\frac{\beta}{N} I_{t} S_{t}+b\left(N-I_{t}-s_{t}+I_{t}\right) \\
+I_{t+1}=\frac{B}{N} I_{t} S_{t}+(1-b-\gamma) I_{t}
+\end{array}\right. \\
+& \left\{\begin{array}{l}
+s_{t+1}=(1-p) s_{t}-\frac{B}{N} I_{t} s_{t}+b\left(N-s_{t}\right)=f\left(s_{t}, I_{t}\right) \\
+I_{t+1}=\frac{B}{N} s_{t} s_{t}+(1-b-\gamma) s_{t}=g\left(s_{t}, I_{t}\right)
+\end{array}\right.
+\end{aligned}
+$$
+
+$f(\bar{s}, \bar{s})=\frac{0}{s}$ solutions satisfy\\
+$f(\bar{S}, I)=\bar{s}$ and $g(J, \bar{I})=I$, that is:
+
+
+\begin{align*}
+& (1-p) \bar{s}-\frac{\beta}{N} \bar{I} \bar{s}+b(N-\bar{J})=\bar{S} \\
+& -p \bar{S}-\frac{\beta}{N} \bar{I} \bar{S}+b(N-\bar{J})=0 \quad(1)  \tag{1}\\
+& \frac{\beta}{N} \bar{I} \bar{S}+(1-b-\gamma) \bar{I}=\bar{J} \\
+& \frac{\beta}{N} \bar{I} \bar{S}+(1-b-\gamma) \bar{I}-\bar{I}=0 \quad \frac{R}{N} \bar{I} \bar{S}-(b+\gamma) J=0
+\end{align*}
+
+
+Adding (I) and (2) yields
+
+
+\begin{align*}
+& -p \bar{S}-\frac{B}{N} \bar{I} \bar{s}+b(N-\bar{S})+\frac{p}{N} \bar{J}-(b+\gamma) \bar{J}=0 \\
+& b(N-\bar{s})=(b+\gamma) \overline{7}+p^{\bar{s}} \tag{3}
+\end{align*}
+
+
+We will analyze the equilibrium solutions.\\
+The Jacobian matrix of the model is given by
+
+$$
+J=\left(\begin{array}{ll}
+\frac{\partial f}{\partial s} & \frac{\partial f}{\partial I} \\
+\frac{\partial g}{\partial s} & \frac{\partial g}{\partial I}
+\end{array}\right)=\left(\begin{array}{ll}
+1-p-\frac{\beta}{N} J-b & \frac{-\beta}{N} s \\
+\frac{\beta}{N} I & \frac{\beta}{N} s+1-b-\gamma
+\end{array}\right)
+$$
+
+Let $J_{1}$ be the disease -free equilibrium and $J_{2}$ be the endemic equilibrium.\\
+Then,
+
+$$
+\begin{aligned}
+& J_{1}=\left(\begin{array}{cc}
+1-p-b & \frac{-\beta b}{p+b} \\
+0 & \frac{p b}{p+p}+1-b-\gamma
+\end{array}\right) \\
+& J_{2}=\left(\begin{array}{cc}
+1-b\left(\frac{p-(b+\gamma)}{b+\gamma}\right)-b & -(b+\gamma) \\
+b\left(\frac{\beta-(b+\gamma)}{b+\gamma}\right)-p
+\end{array}\right)
+\end{aligned}
+$$
+
+substituting (3) to (1) yields:\\
+-pIs - $\frac{B}{N} \bar{S}+(b+\gamma) I+$ pis $=0$
+
+$$
+I\left(-\frac{\beta}{\omega} \bar{S}+b+\gamma\right)=0
+$$
+
+$I=0$ or $\frac{\beta}{N} \bar{s}=b+\gamma$
+
+$$
+\begin{aligned}
+B \bar{S} & =(b+\gamma) N \\
+\bar{s} & =\frac{(b+\gamma) N}{\beta}
+\end{aligned}
+$$
+
+If $\bar{I}=0$, then (I) yields
+
+$$
+\begin{gathered}
+\left.-p \bar{s}-\frac{\beta}{N}+0\right)^{s} s+b(w-3)=0 \\
+-\overline{p s}+b(N-3)=0 \\
+-\bar{s}(p+b)+b N=0 \\
+\bar{s}(p+b)=b N \\
+\bar{s}=\frac{b N}{p+b}
+\end{gathered}
+$$
+
+$$
+\text { If } \bar{s}=\frac{(b+\gamma) N}{p},(1) \text { yields }
+$$
+
+$$
+\begin{aligned}
+& -p\left(\frac{b+\partial}{\beta}\right)^{N}-\frac{\beta}{\alpha^{\prime}}\left(\frac{b+\gamma}{\beta}\right) N+b\left(N-\left(\frac{b+\gamma}{\beta}\right)^{N}\right) \leq 0 \\
+& -p\left(\frac{b+\gamma}{\beta}\right) N-\bar{I}(b+\partial)+b\left(\frac{N p-(b+\gamma) N}{\beta}\right)=0 \\
+& \bar{I}(b+\gamma)=-P\left(\frac{b+\gamma}{\beta}\right) N+b\left(\frac{N \beta-(b+\gamma) N}{\beta}\right) \\
+& =b+\gamma\left[-\frac{p N}{\beta}-\frac{b N}{\beta}\right]+b N \\
+& I=\frac{-p N}{\beta}-\frac{b N}{p}+\frac{b N}{b+\gamma} \\
+& =b N\left(\frac{\beta-(b+\gamma)}{\beta(b+\gamma)}\right)-\frac{p N}{\beta}
+\end{aligned}
+$$
+
+Thus, the first equilibrium solution is\\
+$(\bar{S}, \tau)=\left(\frac{b N}{p+b}, 0\right)$ is called the disedse-flee solution. Meanunniles the\\
+\includegraphics[max width=\textwidth, center]{2024_12_15_9d4b336fb87549cf30f8g-3}
+
+Now,
+
+$$
+\begin{aligned}
+& \operatorname{det}\left(J_{1}-\lambda I\right)=0 \\
+& \operatorname{det}\left(\begin{array}{cc}
+1-p-b-\lambda & \frac{-p b}{p+b} \\
+6 & \frac{p b}{p+b}+1-b-\gamma-\lambda
+\end{array}\right)=0 \\
+& (1-p-b-\lambda)\left(\frac{p b}{p+b}+1-b-\gamma-\lambda\right)=0 \\
+& \lambda_{1}=1-p-b \quad \text { or } \quad \lambda_{2}=\frac{p b}{p+b}+1-b-\gamma
+\end{aligned}
+$$
+
+$J_{1}$ is LAS if $\left|\lambda_{1}, 2\right|<1$.\\
+Hence, $\quad\left|\lambda_{1}\right|<1 \Leftrightarrow|1-p-b|<1$
+
+$$
+\begin{aligned}
+& \Leftrightarrow 0<1-p-b \\
+\left|\lambda_{2}\right|<1 & \Leftrightarrow\left|\frac{\beta b}{p+b}+1-b-\gamma\right| \\
+\Leftrightarrow-1 & <\frac{\beta b}{p+b}+1-b-\gamma<1 \\
+\frac{\beta b}{p+b}-b-\gamma & <0 \\
+\frac{\beta b}{p+b} & <b+\gamma \\
+\frac{\beta b}{(p+b)(b+\gamma)} & <1
+\end{aligned}
+$$
+
+we will call the value $\frac{\beta b}{(p+b)(b+\gamma)}=R_{0}$ called the basic reproduction\\
+number. If $R_{0}<1$, there will be no epidemic.
+
+$$
+\begin{aligned}
+& J_{2}=\left(\begin{array}{cc}
+1-R_{0}(p+b) & \frac{-\beta b}{(p+b) R_{0}} \\
+R_{0}(p+b)-b-p & 1
+\end{array}\right) \\
+& \operatorname{Tr}\left(J_{2}\right)=1-R_{0}(p+b)+1=2-R_{b}(p+b) \\
+& \operatorname{det}\left(J_{2}\right)=1-R_{0}(p+b)+\frac{\beta b}{(p+b) R_{0}}\left(R_{0}(p+b)-b-p\right) \\
+&=1-R_{0}(p+b)+\frac{\beta b\left(R_{0}(p+b)-b-p\right)}{(p+b) R_{0}}
+\end{aligned}
+$$
+
+By then $2.17, J_{2}$ is LAS iffy
+
+$$
+\begin{aligned}
+& \left|\operatorname{Tr}\left(d_{2}\right)\right|<1+\operatorname{Det}\left(J_{2}\right)<2 \\
+& \left|2-R_{0}(p+b)\right|<2-R_{0}(p+b)+\frac{\beta b\left(R_{0}(p+b)-b-p\right)}{(p+b) R_{0}}<2 \\
+& 2-R_{0}(p+b)<2-R_{0}(p+b)+\frac{\beta b\left(R_{0}(p+b)-b-p\right)}{(p+b) R_{0}}<2
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+& 0<\frac{\beta b\left(R_{0}(p+b)-b-p\right)}{(p+b) R_{0}}<R_{0}(p+b) \\
+& 0<B b\left(1-\frac{(b+p)}{R_{0}(p+b)}\right)<R_{0}(p+b)
+\end{aligned}
+$$
+
+Since $R_{0} \rightarrow 1$ in the endemic equilibrium,
+
+$$
+R_{0}(p+b)>1>\beta b\left(1-\frac{1}{R_{6}}\right)
+$$
+
+From assumption that
+
+$$
+\begin{aligned}
+& 2-R_{0}(p+b)>0 \\
+& R_{0}<\frac{2}{p+b}
+\end{aligned}
+$$
+
+Hence, $1<R_{0}<\frac{2}{p+b}, J_{2}$ is LAS.
+
+$$
+\begin{aligned}
+& S(0)=76 \\
+& I(0)=30
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+& \text { a) } \beta=0.2, b=0.05=\gamma \\
+& p=0.25 \\
+& R_{0}=\frac{(0.2)(0.05)}{(0.25+0.05)(0.05+0.05)}=0 . \overline{3}
+\end{aligned}
+$$
+
+b) $\frac{(0.2)(0.05)}{(0.5+0.05)(0.05+0.05)}=0.18$\\
+c) $\frac{(0.2)(0.05)}{(0.75+0.05)(0.05(0.07)}=0.125$
+
+$$
+\begin{aligned}
+& J_{1} \text { : } \\
+& S=\frac{b N}{p+b} \\
+& \frac{-\beta}{\pi}\left(\frac{b *}{p+b}\right)=\frac{-\beta b}{p+b} \\
+& \frac{B}{N} s+1-b-\gamma \\
+& \frac{\beta b}{p+b}+1-b \gamma \\
+& \zeta=\frac{b N}{p+b} ; J=b N\left(\frac{b-(b+\gamma)}{p(b+\gamma)}-\frac{p N}{p}\right) \\
+& 1-p-\underset{\alpha W}{W D}\left(b W\left(\frac{\beta-(b+\gamma)}{\not(b+\gamma)}-\frac{p \phi}{\not}\right)\right)-b \\
+& 1-b\left(\frac{\beta-(b+\partial)}{b+\gamma}\right)-b \\
+& \frac{p}{N}\left(\frac{(b+\gamma) w^{\gamma}}{\rho}\right)=-(b+\gamma) \\
+& \frac{\alpha}{\alpha}\left(\frac{(b+\gamma \gamma \alpha}{\beta}+1-b-\gamma\right)=1 \\
+& \frac{\beta b}{(p+b)(b+\gamma)}=R_{0} \\
+& \frac{\beta b}{b+\gamma}=R_{0}(p+b) \quad \frac{b+\partial}{\beta b}=\frac{1}{Q_{0}(p+b)} \quad b+\gamma=\frac{\beta b}{R_{0}(p+b)} \\
+& J_{2}=\left(\begin{array}{cc}
+1-b\left(\frac{\beta-(b+\gamma)}{b+\gamma}\right)-b & -(b+\gamma) \\
+b\left(\frac{\beta-(b+\gamma)}{b+\gamma}\right)-p & 1
+\end{array}\right) \\
+& 1-\frac{b B}{b+\gamma}+b-b \\
+& =1-a_{0}(p+b) \\
+& R_{0}(p+b)-b-p
+\end{aligned}
+$$
+
+
+\end{document}
